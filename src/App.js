@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Contact } from './components/contact';
+import Contact from './components/contact'
 import { About } from './components/about';
 import { Home } from './components/home'; //home component
 import {
