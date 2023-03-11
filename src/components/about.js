@@ -41,7 +41,9 @@ export class About extends React.Component{ //inherits from react.component
               
             </div>
 
-            
+            <footer class="py-5 my-5 bg-dark">
+      <h5>© 2023 SHOES4U, Inc. All Rights Reserved</h5>
+      </footer>
             </div>
             
           );

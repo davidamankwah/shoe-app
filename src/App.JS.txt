@@ -1,15 +1,43 @@
+//App.js
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@davidamankwah 
+davidamankwah
+/
+shoe-app
+Public
+Cannot fork because you own this repository and are not a member of any organizations.
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+shoe-app/src/App.js /
+@davidamankwah
+davidamankwah add about and contact page
+Latest commit 0719ecf 3 days ago
+ History
+ 1 contributor
+61 lines (57 sloc)  2.21 KB
+
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// component
 import Contact from './components/contact'
 import { About } from './components/about';
-import { Home } from './components/home'; 
-import { Womens } from './components/womens'; 
-import { Men } from './components/men';
+import { Home } from './components/home'; //home component
 import {
   BrowserRouter as Router,
   Routes,
@@ -32,14 +60,14 @@ class App extends React.Component {
                 <Nav.Link href="/about">About</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
                 <NavDropdown title="New Shoes" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="/men">Men's Shoes</NavDropdown.Item>
-                  <NavDropdown.Item href="/womens">
-                    Women's Shoe
+                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">
+                    Another action
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Login</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">
-                    CheckOut
+                    Separated link
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
@@ -53,8 +81,6 @@ class App extends React.Component {
           <Route path='/' element={<Home />}></Route>  
             <Route path='/about' element={<About/>}></Route>   {/* navigate to the listplanner component*/}
             <Route path='/contact' element={<Contact />}></Route>   {/* navigate to the addplanner component*/}
-            <Route path='/men' element={<Men/>}></Route>
-            <Route path='/womens' element={<Womens/>}></Route>
           </Routes>
   
       </header>
@@ -65,3 +91,18 @@ class App extends React.Component {
 }
 
 export default App;
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+shoe-app/App.js at master · davidamankwah/shoe-app

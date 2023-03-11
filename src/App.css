@@ -20,6 +20,10 @@ h2 {
   text-align: center;
 }
 
+h5 {
+  color: white;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }

@@ -83,11 +83,11 @@ export class Home extends React.Component{ //inherits from react.component
             </Col>
           </Row>
         </Container>
-        <h5>© 2023 SHOES4U, Inc. All Rights Reserved</h5>
+        
       </main>
       
       <footer class="py-5 my-5 bg-dark">
-       
+      <h5>© 2023 SHOES4U, Inc. All Rights Reserved</h5>
       </footer>
 
               
