@@ -9,7 +9,8 @@ import Contact from './components/contact'
 import { About } from './components/about';
 import { Home } from './components/home'; 
 import { Womens } from './components/womens'; 
-import { Men } from './components/men';
+import  Men  from './components/men';
+import  Cart  from './components/cart';
 import {
   BrowserRouter as Router,
   Routes,
@@ -38,7 +39,7 @@ class App extends React.Component {
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Login</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
+                  <NavDropdown.Item href="/cart">
                     CheckOut
                   </NavDropdown.Item>
                 </NavDropdown>
@@ -55,6 +56,7 @@ class App extends React.Component {
             <Route path='/contact' element={<Contact />}></Route>   {/* navigate to the addplanner component*/}
             <Route path='/men' element={<Men/>}></Route>
             <Route path='/womens' element={<Womens/>}></Route>
+            <Route path='/cart' element={<Cart/>}></Route>
           </Routes>
   
       </header>
