@@ -1,4 +1,5 @@
 import React from 'react'; //import react
+import { Button } from '@mui/material';
 
 export class About extends React.Component{ //inherits from react.component 
     render(){
@@ -21,7 +22,7 @@ export class About extends React.Component{ //inherits from react.component
                     <p class="title">CEO & Founder</p>
                     <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                     <p>David@example.com</p>
-                    <p><button class="button">Contact</button></p>
+                    <p><Button href='/contact'>Contact</Button></p>
                   </div>
                 </div>
               </div>
@@ -34,7 +35,7 @@ export class About extends React.Component{ //inherits from react.component
                   <p class="title">Art Director</p>
                   <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                   <p>Mateusz @example.com</p>
-                  <p><button class="button">Contact</button></p>
+                  <p><Button href='/contact'>Contact</Button></p>
                 </div>
               </div>
             </div>
