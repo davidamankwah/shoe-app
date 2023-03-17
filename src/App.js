@@ -5,7 +5,7 @@ import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } fr
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // component
-import Contact from './components/contact'
+import { Contact } from './components/contact';
 import { About } from './components/about';
 import { Home } from './components/home'; 
 import { Womens } from './components/womens'; 
@@ -53,7 +53,7 @@ class App extends React.Component {
         <Routes>
           <Route path='/' element={<Home />}></Route>  
             <Route path='/about' element={<About/>}></Route>   {/* navigate to the listplanner component*/}
-            <Route path='/contact' element={<Contact />}></Route>   {/* navigate to the addplanner component*/}
+            <Route path='/contact' element={<Contact/>}></Route>   {/* navigate to the addplanner component*/}
             <Route path='/men' element={<Men/>}></Route>
             <Route path='/womens' element={<Womens/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>

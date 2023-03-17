@@ -18,6 +18,14 @@ import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } fr
         "https://www.elverys.ie/medias/C2-000000000001136650-592Wx592H?context=bWFzdGVyfGltYWdlc3w5NDk4MnxpbWFnZS9qcGVnfGhlOS9oMjQvMTA5ODczNzE2MjY1MjYvQzJfMDAwMDAwMDAwMDAxMTM2NjUwXzU5Mld4NTkySHxkOGZlMWQwMWZlM2M3OTRjY2MyNGY3MTk4NDk3YjY3ZmM5Y2ZjMzk4ZThmZmUyYjAwNGQ5ZjRiNjdiNzAzZDI4",
       about: "Nike Air Zoom Pegasus 39 Mens Running Shoes"
     },
+
+    {
+      name: "ENERGETICS",
+      price: 184.5,
+      image_url:
+        "https://www.elverys.ie/medias/C2-000000000001137706-592Wx592H?context=bWFzdGVyfGltYWdlc3wzOTU2N3xpbWFnZS9qcGVnfGg5YS9oMDkvMTA5Njc4MzUyMTM4NTQvQzJfMDAwMDAwMDAwMDAxMTM3NzA2XzU5Mld4NTkySHxlZWFjNGZhMzMwYzExM2M3MzZkMDAxZGQ4YjM0MTcxNTRmMzMwYWEzNDQzZmMzOTQzYWJkYjk3ZGY1NjVmNDIx",
+      about: "Energetics Zyrox Trail II AQB Mens Trail Running Shoes"
+    },
     
     {
       name: "ASICS",
@@ -28,7 +36,7 @@ import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } fr
     }
   ];
   return (
-    <div style={{ width: '30%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+    <div style={{ width: '50%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start'}}>
       {Men.map((data) => (
          <Container> 
             <Row>

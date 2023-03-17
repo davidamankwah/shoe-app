@@ -28,36 +28,42 @@ async function main() {
 }
 
 //Defined schema 
-const menSchema = new mongoose.Schema({
+const contactSchema = new mongoose.Schema({
   name: String,
-  price: Double,
-  about: String,
-  image_url: String,
+  email: String,
+  message: String,
 });
 
-const menModel = mongoose.model('mens', menSchema); //planModel allow interaction with database.
+const loginSchema = new mongoose.Schema({
+  task: String,
+  description: String,
+  priorty: String,
+  day: String,
+  time: String
+});
+
+const contactModel = mongoose.model('contacts', contactSchema); //planModel allow interaction with database.
 
 app.get('/', function (req, res) {
   res.send('Hello World')
 })
 
 //a post method to add todo plan
-app.post('/api/plans', (req, res) => {
+app.post('/api/contacts', (req, res) => {
   console.log(req.body);
   //create records in database
-  menModel.create({
+  contactModel.create({
     name: req.body.name,
-    price: req.body.price,
-    about: req.body.about,
-    image_url: req.body.image_url,
+    email: req.body.email,
+    message: req.body.message,
   }).then(()=>{res.status(201).send('Data received');}) //successful requset with response
   .catch((error)=>{res.status(500).send(error)}) //catch error
   //res.send('Data received');
 })
 
 // a  route point that find plans and gets it to display 
-app.get('/api/mens', (req, res) => {
-  menModel.find((error, data) => {
+app.get('/api/contacts', (req, res) => {
+  contactModel.find((error, data) => {
     res.json(data);
   })
 })
