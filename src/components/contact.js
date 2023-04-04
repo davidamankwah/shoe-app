@@ -67,7 +67,7 @@ export class Contact extends React.Component {
   render() {
       return (
           <div>
-              <h3>Contact Formk</h3>
+              <h3>Contact Form</h3>
 
               <form onSubmit={this.handleSubmit}>
                   {/* add task name */}

@@ -23,6 +23,18 @@ export class Womens extends React.Component {
             </Col>
             <Col>
               <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src="https://cdn.shopify.com/s/files/1/0982/2240/products/w_nimbuslite_100_7_1200x1200.jpg?v=1612375034" />
+                <Card.Body>
+                  <Card.Title>Nimbus Lite</Card.Title>
+                  <Card.Text>
+                  You ready for your moment in the sun? Every time the AJ1 gets a remake you get the classic sneaker in new colours and textures for a fresh look with a familiar feel. Premium materials and accents give modern expression to an all-time favourite. Get out there and shine.
+                  </Card.Text>
+                  <Button variant="primary">121.99€</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="https://static.nike.com/a/images/t_default/92e1c971-8212-4458-9840-4d54f3c020b2/revolution-6-next-nature-road-running-shoes-BsV5CW.png" />
                 <Card.Body>
                   <Card.Title>Nature Road running shoes</Card.Title>

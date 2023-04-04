@@ -7,9 +7,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // component
 import { Contact } from './components/contact';
 import { About } from './components/about';
+import Login from './components/login';
 import { Home } from './components/home'; 
 import { Womens } from './components/womens'; 
 import  Men  from './components/men';
+import ShoeList from './components/shoelist';
 import  Cart  from './components/cart';
 import {
   BrowserRouter as Router,
@@ -37,7 +39,7 @@ class App extends React.Component {
                   <NavDropdown.Item href="/womens">
                     Women's Shoe
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Login</NavDropdown.Item>
+                  <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="/cart">
                     CheckOut
@@ -57,6 +59,7 @@ class App extends React.Component {
             <Route path='/men' element={<Men/>}></Route>
             <Route path='/womens' element={<Womens/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
+            <Route path='/login' element={<Login/>}></Route>
           </Routes>
   
       </header>

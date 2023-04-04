@@ -3,13 +3,8 @@ import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } fr
 //export class Men extends React.Component {
   export default function Men() {
   const Men = [
-    {
-      name: "Brooks",
-      price: 150.5,
-      image_url:
-        "https://www.elverys.ie/medias/C2-000000000001135943-592Wx592H?context=bWFzdGVyfGltYWdlc3wxMjg3NjF8aW1hZ2UvanBlZ3xoMzAvaGZkLzEwOTMwMDI1MDcwNjIyL0MyXzAwMDAwMDAwMDAwMTEzNTk0M181OTJXeDU5Mkh8ZjVkNGFjZmQxMDEzYzBkOTA5MjUzYmRjYzdhOGFlYmNlNTM1NDQ1NjY3MGZkNmUwZDU4NjFkNDI3OTcwZmIwYg",
-      about: "Brooks Ghost 10 Mens Running Shoe"
-    },
+    {name: "Brooks", price: 150.5,image_url: "https://www.elverys.ie/medias/C2-000000000001135943-592Wx592H?context=bWFzdGVyfGltYWdlc3wxMjg3NjF8aW1hZ2UvanBlZ3xoMzAvaGZkLzEwOTMwMDI1MDcwNjIyL0MyXzAwMDAwMDAwMDAwMTEzNTk0M181OTJXeDU5Mkh8ZjVkNGFjZmQxMDEzYzBkOTA5MjUzYmRjYzdhOGFlYmNlNTM1NDQ1NjY3MGZkNmUwZDU4NjFkNDI3OTcwZmIwYg", about: "Brooks Ghost 10 Mens Running Shoe"},
+
 
     {
       name: "Nike",
@@ -20,12 +15,21 @@ import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } fr
     },
 
     {
+      name: "Reebook",
+      price: 70.5,
+      image_url:
+        "https://www.elverys.ie/medias/C1-000000000001135211-636Wx636H?context=bWFzdGVyfGltYWdlc3wxNDc5ODd8aW1hZ2UvanBlZ3xoYzUvaGM1LzExMDU5NjkyMDc3MDg2L0MxXzAwMDAwMDAwMDAwMTEzNTIxMV82MzZXeDYzNkh8YmU3ZWU0ODZjYjVmMjI5NGUzNTBiYTQ4YzVjNDQwNWE2MTkyYmJjMzIyZGRlYjRkMWFkOGRmYjVkZDhhZWUzMQ",
+      about: "Reebok NFX Mens Trainers"
+    },
+
+    {
       name: "ENERGETICS",
       price: 184.5,
       image_url:
         "https://www.elverys.ie/medias/C2-000000000001137706-592Wx592H?context=bWFzdGVyfGltYWdlc3wzOTU2N3xpbWFnZS9qcGVnfGg5YS9oMDkvMTA5Njc4MzUyMTM4NTQvQzJfMDAwMDAwMDAwMDAxMTM3NzA2XzU5Mld4NTkySHxlZWFjNGZhMzMwYzExM2M3MzZkMDAxZGQ4YjM0MTcxNTRmMzMwYWEzNDQzZmMzOTQzYWJkYjk3ZGY1NjVmNDIx",
       about: "Energetics Zyrox Trail II AQB Mens Trail Running Shoes"
     },
+    
     
     {
       name: "ASICS",
@@ -36,26 +40,31 @@ import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } fr
     }
   ];
   return (
-    <div style={{ width: '50%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start'}}>
+    <div >
       {Men.map((data) => (
-         <Container> 
+         <Container style={{ width: '18rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}> 
             <Row>
                <Col>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem'}}>
                <Card.Img variant="top" src={data.image_url} />
                <Card.Body>
-               <Card.Title>{data.name}</Card.Title>
+               <Card.Title  >{data.name}</Card.Title>
                <Card.Text>
               {data.about}
               </Card.Text>
-              <Button variant="primary">{data.price}</Button>
+              <Card.Text>
+              €{data.price}
+              </Card.Text>
+              <Button variant="primary">Add to Cart</Button>
               </Card.Body>
          </Card>
      </Col>
        </Row>
         </Container>
-   
       ))}
-    </div>
+    </div>   
+    
+
+    
   );
   }
