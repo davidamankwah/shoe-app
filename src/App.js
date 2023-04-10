@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Shoe } from './components/Shop/shoe';
 import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,8 +12,9 @@ import Login from './components/login';
 import { Home } from './components/home'; 
 import { Womens } from './components/womens'; 
 import  Men  from './components/men';
-import ShoeList from './components/shoelist';
-import  Cart  from './components/cart';
+import { Shoelist } from './components/shoelist';
+import { Cart } from "./components/Cart/cart";
+import { ShopContextProvider } from "./context/shop-context";
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,6 +24,7 @@ import {
 class App extends React.Component {
   render() { //render methd to dispay other componets 
   return (
+    <ShopContextProvider>
     <Router>
     <div className="App">
       <header >
@@ -36,8 +39,8 @@ class App extends React.Component {
                 <Nav.Link href="/contact">Contact</Nav.Link>
                 <NavDropdown title="New Shoes" id="basic-nav-dropdown">
                   <NavDropdown.Item href="/men">Men's Shoes</NavDropdown.Item>
-                  <NavDropdown.Item href="/womens">
-                    Women's Shoe
+                  <NavDropdown.Item href="/shoe">
+                    Men & Women Shoes
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                   <NavDropdown.Divider />
@@ -60,11 +63,13 @@ class App extends React.Component {
             <Route path='/womens' element={<Womens/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
             <Route path='/login' element={<Login/>}></Route>
+            <Route path='/shoe' element={<Shoe/>}></Route>
           </Routes>
   
       </header>
     </div>
     </Router>
+    </ShopContextProvider>
   );
 }
 }

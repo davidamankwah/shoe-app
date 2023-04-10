@@ -30,7 +30,7 @@ export class Home extends React.Component{ //inherits from react.component
             <Card className="text-center bg-secondary text-white my-5 py-4">
               <Card.Body>Welcome to our online shoe shop, where fashion meets comfort! We offer a wide range of trendy and comfortable shoes that cater to your every need. From stylish sneakers to elegant boots, we have it all. Our passion for fashion and quality footwear is reflected in every product we offer, ensuring that you receive the best possible shopping experience.</Card.Body>
             </Card>
-            <h1>NEW ARRIVALS</h1>
+            <h1>Upcoming Shoe's</h1>
           </Row>
           <Row>
             <Col>
@@ -41,7 +41,7 @@ export class Home extends React.Component{ //inherits from react.component
                   <Card.Text>
                   You ready for your moment in the sun? Every time the AJ1 gets a remake you get the classic sneaker in new colours and textures for a fresh look with a familiar feel. Premium materials and accents give modern expression to an all-time favourite. Get out there and shine.
                   </Card.Text>
-                  <Button variant="primary">129.99€</Button>
+                  
                 </Card.Body>
               </Card>
             </Col>
@@ -53,7 +53,7 @@ export class Home extends React.Component{ //inherits from react.component
                   <Card.Text>
                   The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.
                   </Card.Text>
-                  <Button variant="primary">119.99€</Button>
+                 
                 </Card.Body>
               </Card>
             </Col>
@@ -65,7 +65,7 @@ export class Home extends React.Component{ //inherits from react.component
                   <Card.Text>
                   Created for the hardwood but taken to the streets, the '80s b-ball icon returns with embroidered details, contrast stitching and throwback hoops flair. Its padded, low-cut collar lets you take your game anywhere—in comfort.
                   </Card.Text>
-                  <Button variant="primary">119.99€</Button>
+                 
                 </Card.Body>
               </Card>
             </Col>
@@ -77,7 +77,7 @@ export class Home extends React.Component{ //inherits from react.component
                   <Card.Text>
                   How do we describe the Nike Air More Uptempo '96? Bold, eye-catching and all about the AIR. With a design inspired by high-flying basketball style and '90s graffiti art, these kicks can't help but turn heads. Vibrant red and white accents refresh an original that has reigned supreme for more than 20 years while Air units provide comfortable cushioning.
                   </Card.Text>
-                  <Button variant="primary">179.99€</Button>
+         
                 </Card.Body>
               </Card>
             </Col>

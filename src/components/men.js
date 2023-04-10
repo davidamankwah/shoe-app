@@ -3,8 +3,12 @@ import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } fr
 //export class Men extends React.Component {
   export default function Men() {
   const Men = [
-    {name: "Brooks", price: 150.5,image_url: "https://www.elverys.ie/medias/C2-000000000001135943-592Wx592H?context=bWFzdGVyfGltYWdlc3wxMjg3NjF8aW1hZ2UvanBlZ3xoMzAvaGZkLzEwOTMwMDI1MDcwNjIyL0MyXzAwMDAwMDAwMDAwMTEzNTk0M181OTJXeDU5Mkh8ZjVkNGFjZmQxMDEzYzBkOTA5MjUzYmRjYzdhOGFlYmNlNTM1NDQ1NjY3MGZkNmUwZDU4NjFkNDI3OTcwZmIwYg", about: "Brooks Ghost 10 Mens Running Shoe"},
-
+    {
+    name: "Brooks", 
+    price: 150.5,
+    image_url: "https://www.elverys.ie/medias/C2-000000000001135943-592Wx592H?context=bWFzdGVyfGltYWdlc3wxMjg3NjF8aW1hZ2UvanBlZ3xoMzAvaGZkLzEwOTMwMDI1MDcwNjIyL0MyXzAwMDAwMDAwMDAwMTEzNTk0M181OTJXeDU5Mkh8ZjVkNGFjZmQxMDEzYzBkOTA5MjUzYmRjYzdhOGFlYmNlNTM1NDQ1NjY3MGZkNmUwZDU4NjFkNDI3OTcwZmIwYg", 
+    about: "Brooks Ghost 10 Mens Running Shoe"
+    },
 
     {
       name: "Nike",

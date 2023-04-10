@@ -58,9 +58,9 @@ app.get('/api/contacts', (req, res) => {
 })
 
 const UserSchema = new mongoose.Schema({
-  username: String,
-  emails: String,
-  password: String,
+  signupUsername: String,
+  signupEmail: String,
+  signupPassword: String,
 });
 
 const UserModel = mongoose.model('users', UserSchema); //planModel allow interaction with database.
@@ -70,9 +70,9 @@ app.post('/api/users', (req, res) => {
   console.log(req.body);
   //create records in database
   UserModel.create({
-    username: req.body.username,
-    emails: req.body.emails,
-    password: req.body.password,
+    signupUsername: req.body.signupUsername,
+    signupEmail: req.body.signupEmail,
+    signupPassword: req.body.signupPassword,
   }).then(()=>{res.status(201).send('Data received');}) //successful requset with response
   .catch((error)=>{res.status(500).send(error)}) //catch error
   //res.send('Data received');
