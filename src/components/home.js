@@ -1,5 +1,5 @@
 import React from 'react'; //import react
-import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } from "react-bootstrap";
+import {Container, Row, Col, Image, Card} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export class Home extends React.Component{ //inherits from react.component 

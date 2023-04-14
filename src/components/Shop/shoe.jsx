@@ -1,6 +1,7 @@
 import React from "react";
 import { PRODUCTS } from "../../product";
 import { Product } from "./product";
+
 import "./shoe.css";
 
 export const Shoe = () => {

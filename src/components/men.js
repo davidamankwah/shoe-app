@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown, Row, Col, Image, Card, Button } from "react-bootstrap";
+import {Container, Row, Col, Card, Button } from "react-bootstrap";
 //export class Men extends React.Component {
   export default function Men() {
   const Men = [
