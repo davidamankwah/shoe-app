@@ -18,20 +18,14 @@ function Login() {
     }
   }, []);
 
-  const handleLogin = async (event) => {
+  const handleLogin = (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.get(`/api/users?username=${username}&password=${password}`);
-      if (response.data.length > 0) {
-        setLoggedIn(true);
-        localStorage.setItem("isLoggedIn", "true");
-        setSignupUsername(response.data[0].username);
-      } else {
-        alert("Invalid username or password");
-      }
-    } catch (error) {
-      console.error(error);
-      // Handle error, like displaying an error message to user
+    // Check if login credentials are valid
+    if (username === signupUsername && password === signupPassword) {
+      setLoggedIn(true);
+      localStorage.setItem("isLoggedIn", "true");
+    } else {
+      alert("Invalid username or password");
     }
   };
 
