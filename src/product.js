@@ -6,7 +6,7 @@ import shoes5 from "./assests/shoe5.jpg";
 import shoes6 from "./assests/shoe6.jpg";
 import shoes7 from "./assests/shoe7.jpg";
 import shoes8 from "./assests/shoe8.jpg";
-
+import shoes9 from "./assests/shoe9.jpg";
 
 export const PRODUCTS = [
   {
@@ -56,5 +56,11 @@ export const PRODUCTS = [
     productName: "ASICS",
     price: 40.0,
     productImage: shoes8,
+  },
+  {
+    id: 9,
+    productName: "ASICS Women Running  shoes",
+    price: 48.0,
+    productImage: shoes9,
   },
 ];

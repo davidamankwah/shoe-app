@@ -22,7 +22,7 @@ export class About extends React.Component{ //inherits from react.component
                     <p class="title">CEO & Founder</p>
                     <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                     <p>David@example.com</p>
-                    <p><Button href='/contact'>Contact</Button></p>
+                    <p><Button href='/addcontact'>Contact</Button></p>
                   </div>
                 </div>
               </div>
@@ -35,7 +35,7 @@ export class About extends React.Component{ //inherits from react.component
                   <p class="title">Art Director</p>
                   <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                   <p>Mateusz @example.com</p>
-                  <p><Button href='/contact'>Contact</Button></p>
+                  <p><Button href='/addcontact'>Contact</Button></p>
                 </div>
               </div>
             </div>

@@ -5,13 +5,15 @@ import { Navbar, Container, Nav, NavDropdown} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // component
-import { Contact } from './components/contact';
+import { AddContact } from './components/addcontact';
 import { About } from './components/about';
 import Login from './components/login';
 import { Home } from './components/home'; 
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "phosphor-react";
 import  Men  from './components/men';
+import { ListContact } from './components/listcontact';
+import { EditContact } from './components/editContact';
 import { Cart } from "./components/Cart/cart";
 import { ShopContextProvider } from "./context/shop-context";
 import {
@@ -35,9 +37,9 @@ class App extends React.Component {
               <Nav className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About</Nav.Link>
-                <Nav.Link href="/contact">Contact</Nav.Link>
+                <Nav.Link href="/addcontact">Contact</Nav.Link>
                 <NavDropdown title="New Shoes" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="/men">Feedback</NavDropdown.Item>
+                  <NavDropdown.Item href="/listcontact">Feedback</NavDropdown.Item>
                   <NavDropdown.Item href="/shoe">
                     Men & Women Shoes
                   </NavDropdown.Item>
@@ -52,18 +54,19 @@ class App extends React.Component {
               </Nav>
             </Navbar.Collapse>
           </Container>
-          <input id="searchbar" onkeyup="search_shoes()" type="text"
-          name="search" placeholder="Search Shoes"></input>
+          
 
         </Navbar>
         <Routes>
           <Route path='/' element={<Home />}></Route>  
             <Route path='/about' element={<About/>}></Route>   {/* navigate to the listplanner component*/}
-            <Route path='/contact' element={<Contact/>}></Route>   {/* navigate to the addplanner component*/}
-            <Route path='/men' element={<Men/>}></Route>
+            <Route path='/addcontact' element={<AddContact/>}></Route>   {/* navigate to the addplanner component*/}
+            <Route path='/editContact/:id' element={<EditContact/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/shoe' element={<Shoe/>}></Route>
+            <Route path='/listcontact' element={<ListContact/>}></Route>
+          
           </Routes>
   
       </header>

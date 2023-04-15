@@ -26,6 +26,37 @@ main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect('mongodb+srv://admin:admin@cluster0.oiviaxb.mongodb.net/?retryWrites=true&w=majority'); //Database connection. Asychronous call
 }
+const UserSchema = new mongoose.Schema({
+  signupUsername: String,
+  signupEmail: String,
+  signupPassword: String,
+});
+
+const UserModel = mongoose.model('users', UserSchema); //planModel allow interaction with database.
+
+//a post method to add todo plan
+app.post('/api/users', (req, res) => {
+  console.log(req.body);
+  //create records in database
+  UserModel.create({
+    signupUsername: req.body.signupUsername,
+    signupEmail: req.body.signupEmail,
+    signupPassword: req.body.signupPassword,
+  }).then(()=>{res.status(201).send('Data received');}) //successful requset with response
+  .catch((error)=>{res.status(500).send(error)}) //catch error
+  //res.send('Data received');
+})
+
+app.get('/api/users', (req, res) => {
+  UserModel.find()
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send('An error occurred while fetching books');
+    });
+});
 
 //Defined schema 
 const contactSchema = new mongoose.Schema({
@@ -50,40 +81,67 @@ app.post('/api/contacts', (req, res) => {
   //res.send('Data received');
 })
 
-// a  route point that find plans and gets it to display 
+/
+//a  route point that returns a book information
 app.get('/api/contacts', (req, res) => {
-  contactModel.find((error, data) => {
-    res.json(data);
-  })
-})
-
-const UserSchema = new mongoose.Schema({
-  signupUsername: String,
-  signupEmail: String,
-  signupPassword: String,
+  contactModel.find()
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send('An error occurred while fetching books');
+    });
 });
 
-const UserModel = mongoose.model('users', UserSchema); //planModel allow interaction with database.
 
-//a post method to add todo plan
-app.post('/api/users', (req, res) => {
-  console.log(req.body);
-  //create records in database
-  UserModel.create({
-    signupUsername: req.body.signupUsername,
-    signupEmail: req.body.signupEmail,
-    signupPassword: req.body.signupPassword,
-  }).then(()=>{res.status(201).send('Data received');}) //successful requset with response
-  .catch((error)=>{res.status(500).send(error)}) //catch error
-  //res.send('Data received');
-})
 
-// a  route point that find plans and gets it to display 
-app.get('/api/users', (req, res) => {
-  UserModel.find((error, data) => {
-    res.json(data);
-  })
-})
+//listen for delete method
+app.delete('/api/contact/:id', (req, res) => {
+  console.log("Deleting: "+req.params.id); //output deleted book id to console
+
+  //find book by id to delete
+  //go to database to find id and delete 
+  contactModel.findByIdAndDelete(req.params.id)
+    .then(data => {
+      res.json(data); //send back some data
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).send(error);
+    });
+});
+
+
+app.get('/api/contact/:id', (req, res)=>{
+  contactModel.findById(req.params.id)
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json({message: "Error retrieving contact"});
+    });
+});
+
+
+// listen request to change contact by id
+// override the record
+app.put('/api/contact/:id', async (req, res) => {
+  console.log("Update: " + req.params.id); //output update contact id to console
+
+  try {
+    const updatedContact = await contactModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    console.log(updatedContact);
+    res.send(updatedContact);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+
+
 
 //connect to port 4000
 app.listen(port, () => {
