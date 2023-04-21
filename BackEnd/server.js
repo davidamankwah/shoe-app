@@ -26,15 +26,17 @@ main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect('mongodb+srv://admin:admin@cluster0.oiviaxb.mongodb.net/?retryWrites=true&w=majority'); //Database connection. Asychronous call
 }
+//read from USERS
+//defines user schemas
 const UserSchema = new mongoose.Schema({
   signupUsername: String,
   signupEmail: String,
   signupPassword: String,
 });
 
-const UserModel = mongoose.model('users', UserSchema); //planModel allow interaction with database.
+const UserModel = mongoose.model('users', UserSchema); //UserModel allow interaction with database.
 
-//a post method to add todo plan
+//a post method that will create new documents in the MongoDB collections 
 app.post('/api/users', (req, res) => {
   console.log(req.body);
   //create records in database
@@ -47,6 +49,7 @@ app.post('/api/users', (req, res) => {
   //res.send('Data received');
 })
 
+// A get request that will retrieve documents from the MongoDB collections.
 app.get('/api/users', (req, res) => {
   UserModel.find()
     .then((data) => {
@@ -58,6 +61,7 @@ app.get('/api/users', (req, res) => {
     });
 });
 
+//read from CONTACT
 //Defined schema 
 const contactSchema = new mongoose.Schema({
   name: String,
@@ -68,7 +72,7 @@ const contactSchema = new mongoose.Schema({
 
 const contactModel = mongoose.model('contacts', contactSchema); //planModel allow interaction with database.
 
-//a post method to add todo plan
+//a post method to add contacts
 app.post('/api/contacts', (req, res) => {
   console.log(req.body);
   //create records in database
@@ -82,7 +86,7 @@ app.post('/api/contacts', (req, res) => {
 })
 
 /
-//a  route point that returns a book information
+//a  route point that returns a contacts information
 app.get('/api/contacts', (req, res) => {
   contactModel.find()
     .then((data) => {
@@ -98,9 +102,9 @@ app.get('/api/contacts', (req, res) => {
 
 //listen for delete method
 app.delete('/api/contact/:id', (req, res) => {
-  console.log("Deleting: "+req.params.id); //output deleted book id to console
+  console.log("Deleting: "+req.params.id); //output deleted contact id to console
 
-  //find book by id to delete
+  //find contact by id to delete
   //go to database to find id and delete 
   contactModel.findByIdAndDelete(req.params.id)
     .then(data => {
@@ -112,7 +116,7 @@ app.delete('/api/contact/:id', (req, res) => {
     });
 });
 
-
+//The GET request to the /api/contact/:id endpoint will retrieve a specific document based on its ID. 
 app.get('/api/contact/:id', (req, res)=>{
   contactModel.findById(req.params.id)
     .then((data) => {
@@ -140,7 +144,41 @@ app.put('/api/contact/:id', async (req, res) => {
   }
 });
 
+//read from ABOUT
+//Defined schema 
+const aboutSchema = new mongoose.Schema({
+  member: String,
+  title: String,
+  text: String,
+  texts: String,
+});
 
+const aboutModel = mongoose.model('abouts', aboutSchema); //planModel allow interaction with database.
+
+// app.post('/api/abouts', (req, res) => {
+//   console.log(req.body);
+//   //create records in database
+//   aboutModel.create({
+//     member: req.body.member,
+//     title: req.body.title,
+//     text: req.body.text,
+//     texts: req.body.texts,
+//   }).then(()=>{res.status(201).send('Data received');}) //successful requset with response
+//   .catch((error)=>{res.status(500).send(error)}) //catch error
+//   //res.send('Data received');
+// })
+
+//a  route point that returns a contacts information
+app.get('/api/abouts', (req, res) => {
+  aboutModel.find()
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send('An error occurred while fetching books');
+    });
+});
 
 
 //connect to port 4000

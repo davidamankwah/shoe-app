@@ -5,15 +5,15 @@ import { Navbar, Container, Nav, NavDropdown} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // component
-import { AddContact } from './components/addcontact';
-import { About } from './components/about';
+import { AddContact } from './components/Contacts/addcontact';
+import { ViewAbout } from './components/Abouts/viewabout';
 import Login from './components/login';
 import { Home } from './components/home'; 
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "phosphor-react";
-import  Men  from './components/men';
-import { ListContact } from './components/listcontact';
-import { EditContact } from './components/editContact';
+import { Checkout } from './components/checkout';
+import { ListContact } from './components/Contacts/listcontact';
+import { EditContact } from './components//Contacts/editContact';
 import { Cart } from "./components/Cart/cart";
 import { ShopContextProvider } from "./context/shop-context";
 import {
@@ -36,20 +36,20 @@ class App extends React.Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/about">About</Nav.Link>
+                <Nav.Link href="/viewabout">About</Nav.Link>
                 <Nav.Link href="/addcontact">Contact</Nav.Link>
-                <NavDropdown title="New Shoes" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="/listcontact">Feedback</NavDropdown.Item>
+                <Nav.Link>
+                <Link to="/cart">
+                <ShoppingCart size={32} />
+                </Link>
+                </Nav.Link>
+                <NavDropdown title="Shop Now" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="/listcontact"> Your Feedback</NavDropdown.Item>
                   <NavDropdown.Item href="/shoe">
                     Men & Women Shoes
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item>
-                  <Link to="/cart">
-          <ShoppingCart size={32} />
-        </Link>
-                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
@@ -59,14 +59,14 @@ class App extends React.Component {
         </Navbar>
         <Routes>
           <Route path='/' element={<Home />}></Route>  
-            <Route path='/about' element={<About/>}></Route>   {/* navigate to the listplanner component*/}
+            <Route path='/viewabout' element={<ViewAbout/>}></Route>   {/* navigate to the listplanner component*/}
             <Route path='/addcontact' element={<AddContact/>}></Route>   {/* navigate to the addplanner component*/}
             <Route path='/editContact/:id' element={<EditContact/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/shoe' element={<Shoe/>}></Route>
             <Route path='/listcontact' element={<ListContact/>}></Route>
-          
+            <Route path='/checkout' element={<Checkout/>}></Route>
           </Routes>
   
       </header>

@@ -2,7 +2,7 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button' //import buttom for styling
+import Button from 'react-bootstrap/Button'; //import buttom for styling
 import axios from "axios"; //import to use axios
 export class ContactItem extends React.Component {
 

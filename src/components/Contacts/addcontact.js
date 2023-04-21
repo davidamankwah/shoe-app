@@ -4,6 +4,7 @@ import axios from "axios";
 
 export class AddContact extends React.Component {
 
+  //the constructor initialize the state of a React component and bind event handlers to the component's methods.
   constructor() {
       super();
       //binding events
@@ -27,13 +28,13 @@ export class AddContact extends React.Component {
       ${this.state.email},
       ${this.state.message}`);
 
-      //define plan object
+      //define contact object
       const contact = {
           name: this.state.name,
           email: this.state.email,
           message: this.state.message
       }
-      //a post request to the server. sending a plan object to the server
+      //a post request to the server. sending a contact object to the server
       axios.post('http://localhost:4000/api/contacts', contact)
           .then()
           .catch();
@@ -70,7 +71,7 @@ export class AddContact extends React.Component {
               <h3>Contact Form</h3>
 
               <form onSubmit={this.handleSubmit}>
-                  {/* add task name */}
+                  {/* add name */}
                   <div className="form-group">
                       <label>Name: </label>
                       <input type="text"
@@ -79,7 +80,7 @@ export class AddContact extends React.Component {
                           onChange={this.onChangeContactName}
                       />
                   </div>
-                  {/* add description */}
+                  {/* add email */}
                   <div className="form-group">
                       <label>Email: </label>
                       <input type="email"
@@ -90,7 +91,7 @@ export class AddContact extends React.Component {
                       />
                   </div>
 
-                  {/* add priorty */}
+                  {/* add message */}
                   <div className="form-group">
                       <label>Message: </label>
                       <textarea type="text"
@@ -100,7 +101,7 @@ export class AddContact extends React.Component {
                       />
                   </div>
 
-                   {/* submit button to add plans*/}
+                   {/* submit button to add contacts*/}
                   <button className="btn btn-danger" type="submit" value="Submit" >
                     Submit
                     </button>
