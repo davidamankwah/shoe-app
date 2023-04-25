@@ -18,21 +18,23 @@ export const Cart = () => {
       </div>
       <div className="cart">
         {PRODUCTS.map((product) => {
-          if (cartItems[product.id] !== 0) {
+          if (cartItems[product.pid] !== 0) {
             return <CartItem data={product} />;
           }
+          return null;
         })}
         
       </div>
 
       {totalAmount > 0 ? (
         <div className="checkout">
-          <p> Subtotal: ${totalAmount} </p>
+          <p> Subtotal: €{totalAmount} </p>
           <button onClick={() => navigate("/")}> Continue Shopping </button>
           <button
             onClick={() => {
-              checkout();
               navigate("/checkout");
+              checkout();
+             
             }}
           >
             {" "}

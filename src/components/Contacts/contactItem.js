@@ -44,15 +44,9 @@ export class ContactItem extends React.Component {
                                 </p>
                     
                     </Card.Body>
-                    {/* link allows you to edit a book.*/}
-                    {/* _id is identify each book.  */}
-                    {/* Send you where can to edit book */}
-                    {/* like a button to click */}
+                  
                     <Link to={'/editContact/' + this.props.contact._id} className="btn btn-primary">Edit</Link>
 
-                    {/* red button that allows you to delete */}
-                    {/* invoke DeleteBook function when clicked */}
-                    {/* use onClick event */}
                     <Button variant="danger" onClick={this.DeleteContact}>Delete</Button>
                 </Card>
             </div>

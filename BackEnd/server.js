@@ -180,6 +180,25 @@ app.get('/api/abouts', (req, res) => {
     });
 });
 
+const bootSchema = new mongoose.Schema({
+  pid: Number,
+  productName: String,
+  price: Number,
+  productImage: String,
+});
+
+const bootModel = mongoose.model('boots', bootSchema);
+
+app.get('/api/boots', (req, res) => {
+  bootModel.find()
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send('An error occurred while fetching books');
+    });
+});
 
 //connect to port 4000
 app.listen(port, () => {

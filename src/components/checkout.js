@@ -59,7 +59,7 @@ export const Checkout = () => {
         <ul>
           {Object.entries(cartItems).map(([itemId, quantity]) => (
             <li key={itemId}>
-              {PRODUCTS.find((product) => product.id === Number(itemId)).productName} x {quantity}
+              {PRODUCTS.find((product) => product.pid === Number(itemId)).productName} x {quantity}
             </li>
           ))}
         </ul>
