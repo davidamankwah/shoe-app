@@ -1,6 +1,7 @@
 //IMPORTS
 import React, { useContext, useState } from 'react';
 import { ShopContext } from '../context/shop-context';
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { PRODUCTS } from '../product';
 
 export const Checkout = () => {
@@ -64,60 +65,13 @@ export const Checkout = () => {
         </ul>
         <p>Total: ${getTotalCartAmount().toFixed(2)}</p>
       </div>
-      <div> 
-      <h2>Your details</h2>
-      <label>
-            First Name:
-            <input
-              type="text"
-             
-            />
-            </label>
+    <div>
+           <PayPalScriptProvider>
+        <PayPalButtons
          
-      </div>
-      <br />      
-      <div> 
-      <label>
-            Last Name:
-            <input
-              type="text"
-            />
-            </label>   
-      </div>
-      <br />  
-
-      <div> 
-      <label>
-            Adress 1:
-            <input
-              type="text"
-             
-            />
-            </label>   
-      </div>
-      <br />    
-
-      <div> 
-      <label>
-            Adress 2:
-            <input
-              type="text"
-             
-            />
-            </label>
-      </div>
-      <br />          
-
-      <div> 
-      <label>
-            PhoneNumebr:
-            <input
-              type="text"
-             
-            />
-            </label>
-      </div>
-      <br />          
+        />
+      </PayPalScriptProvider> </div>
+     
 
       <button onClick={handleCheckout}>Place Order</button>
 
