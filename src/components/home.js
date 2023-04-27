@@ -4,8 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export class Home extends React.Component{ //inherits from react.component 
     render(){
-      //displays hello world!” as a <h1>tag only.
-      //displays the time under
+      
         return ( 
             <div>
                 <main>

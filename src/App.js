@@ -59,9 +59,10 @@ class App extends React.Component {
 
         </Navbar>
         <Routes>
+          {/* navigate to components*/}
           <Route path='/' element={<Home />}></Route>  
-            <Route path='/viewabout' element={<ViewAbout/>}></Route>   {/* navigate to the listplanner component*/}
-            <Route path='/addcontact' element={<AddContact/>}></Route>   {/* navigate to the addplanner component*/}
+            <Route path='/viewabout' element={<ViewAbout/>}></Route>   
+            <Route path='/addcontact' element={<AddContact/>}></Route>   
             <Route path='/editContact/:id' element={<EditContact/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
             <Route path='/login' element={<Login/>}></Route>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Contact } from "./contact"; //imported books
+import { Contact } from "./contact"; //imported contact
 import axios from "axios";
 
 export class ListContact extends React.Component{
@@ -11,7 +11,7 @@ export class ListContact extends React.Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/api/contacts')
+        axios.get('http://localhost:4000/api/contacts') // Fetch the contacts data from the server
         .then((response)=>{
             this.setState({contacts:response.data})
         })
@@ -31,7 +31,8 @@ export class ListContact extends React.Component{
             console.log(error);
         })
     }
-
+ 
+   //array with contact details 
     state = {
         contacts:[ ]
     }
@@ -42,6 +43,7 @@ export class ListContact extends React.Component{
                 <h3>Your Messages!</h3>
 
                 {/* pass ReloadData method */}
+                 {/* display all contact details */}
                 <Contact contact={this.state.contacts} ReloadData={this.ReloadData}></Contact>
             </div>
         );

@@ -12,7 +12,7 @@ export class AddContact extends React.Component {
       this.onChangeContactName = this.onChangeContactName.bind(this);
       this.onChangeContactEmail = this.onChangeContactEmail.bind(this);
       this.onChangeContactMessage = this.onChangeContactMessage.bind(this);
-      //states of plan
+      //states of contact
       this.state = {
           name: '',
           email: '',

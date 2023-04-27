@@ -1,5 +1,5 @@
 import React from "react";
-import { AboutItem } from "./aboutItem"; //import bookitem
+import { AboutItem } from "./aboutItem"; //import aboutItem
 
 export class About extends React.Component{
     render(){

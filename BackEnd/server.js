@@ -26,7 +26,8 @@ main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect('mongodb+srv://admin:admin@cluster0.oiviaxb.mongodb.net/?retryWrites=true&w=majority'); //Database connection. Asychronous call
 }
-//read from USERS
+
+
 //defines user schemas
 const UserSchema = new mongoose.Schema({
   signupUsername: String,
@@ -36,7 +37,7 @@ const UserSchema = new mongoose.Schema({
 
 const UserModel = mongoose.model('users', UserSchema); //UserModel allow interaction with database.
 
-//a post method that will create new documents in the MongoDB collections 
+//a post method that will create new documents in the users collections 
 app.post('/api/users', (req, res) => {
   console.log(req.body);
   //create records in database
@@ -49,7 +50,7 @@ app.post('/api/users', (req, res) => {
   //res.send('Data received');
 })
 
-// A get request that will retrieve documents from the MongoDB collections.
+// A get request that will retrieve documents from the users collections.
 app.get('/api/users', (req, res) => {
   UserModel.find()
     .then((data) => {
@@ -61,8 +62,8 @@ app.get('/api/users', (req, res) => {
     });
 });
 
-//read from CONTACT
-//Defined schema 
+
+//Defined contact schema 
 const contactSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -70,9 +71,9 @@ const contactSchema = new mongoose.Schema({
 });
 
 
-const contactModel = mongoose.model('contacts', contactSchema); //planModel allow interaction with database.
+const contactModel = mongoose.model('contacts', contactSchema); //conatctModel allow interaction with database.
 
-//a post method to add contacts
+//a post method that will create new documents in the contact collections 
 app.post('/api/contacts', (req, res) => {
   console.log(req.body);
   //create records in database
@@ -86,7 +87,7 @@ app.post('/api/contacts', (req, res) => {
 })
 
 /
-//a  route point that returns a contacts information
+// A get request that will retrieve documents from the contact collections.
 app.get('/api/contacts', (req, res) => {
   contactModel.find()
     .then((data) => {
@@ -101,6 +102,7 @@ app.get('/api/contacts', (req, res) => {
 
 
 //listen for delete method
+//delete documents in contact collection
 app.delete('/api/contact/:id', (req, res) => {
   console.log("Deleting: "+req.params.id); //output deleted contact id to console
 
@@ -108,7 +110,7 @@ app.delete('/api/contact/:id', (req, res) => {
   //go to database to find id and delete 
   contactModel.findByIdAndDelete(req.params.id)
     .then(data => {
-      res.json(data); //send back some data
+      res.json(data); //sends back some data
     })
     .catch(error => {
       console.log(error);
@@ -117,6 +119,7 @@ app.delete('/api/contact/:id', (req, res) => {
 });
 
 //The GET request to the /api/contact/:id endpoint will retrieve a specific document based on its ID. 
+//This allows information to be edited.
 app.get('/api/contact/:id', (req, res)=>{
   contactModel.findById(req.params.id)
     .then((data) => {
@@ -144,7 +147,7 @@ app.put('/api/contact/:id', async (req, res) => {
   }
 });
 
-//read from ABOUT
+
 //Defined schema 
 const aboutSchema = new mongoose.Schema({
   member: String,
@@ -153,22 +156,9 @@ const aboutSchema = new mongoose.Schema({
   texts: String,
 });
 
-const aboutModel = mongoose.model('abouts', aboutSchema); //planModel allow interaction with database.
+const aboutModel = mongoose.model('abouts', aboutSchema); //aboutModel allow interaction with database.
 
-// app.post('/api/abouts', (req, res) => {
-//   console.log(req.body);
-//   //create records in database
-//   aboutModel.create({
-//     member: req.body.member,
-//     title: req.body.title,
-//     text: req.body.text,
-//     texts: req.body.texts,
-//   }).then(()=>{res.status(201).send('Data received');}) //successful requset with response
-//   .catch((error)=>{res.status(500).send(error)}) //catch error
-//   //res.send('Data received');
-// })
-
-//a  route point that returns a contacts information
+//a  route point that returns a about information
 app.get('/api/abouts', (req, res) => {
   aboutModel.find()
     .then((data) => {
@@ -180,6 +170,7 @@ app.get('/api/abouts', (req, res) => {
     });
 });
 
+//define boot schema
 const bootSchema = new mongoose.Schema({
   pid: Number,
   productName: String,

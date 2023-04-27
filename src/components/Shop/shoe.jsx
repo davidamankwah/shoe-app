@@ -11,6 +11,7 @@ export const Shoe = () => {
         <h1> Men & Women Shoe's</h1>
       </div>
 
+      {/* display all products details */}
       <div className="products">
         {PRODUCTS.map((product) => (
           <Product data={product} />

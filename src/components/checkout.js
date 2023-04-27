@@ -4,6 +4,7 @@ import { ShopContext } from '../context/shop-context';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { PRODUCTS } from '../product';
 
+
 export const Checkout = () => {
   //useContext hook to consume the ShopContext context object
   const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext); 
@@ -19,7 +20,7 @@ export const Checkout = () => {
     checkout(); //calls the checkout function from the context 
 
     
-    alert("successful"); //// alert message indicating that the order was successful.
+    alert("successful"); // alert message indicating that the order was successful.
   };
 
   return (
@@ -56,6 +57,7 @@ export const Checkout = () => {
 
       <div>
         <h2>Order Summary</h2>
+        {/* display the products */}
         <ul>
           {Object.entries(cartItems).map(([itemId, quantity]) => (
             <li key={itemId}>
@@ -65,6 +67,7 @@ export const Checkout = () => {
         </ul>
         <p>Total: ${getTotalCartAmount().toFixed(2)}</p>
       </div>
+      {/* PayPal Implemented */}
     <div>
            <PayPalScriptProvider>
         <PayPalButtons

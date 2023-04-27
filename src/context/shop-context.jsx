@@ -25,18 +25,22 @@ export const ShopContextProvider = (props) => {
     return totalAmount;
   };
 
+  // add product
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
   };
 
+  //remove product
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
+  //update cart
   const updateCartItemCount = (newAmount, itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
   };
 
+  //checkout function
   const checkout = () => {
     setCartItems(getDefaultCart());
   };

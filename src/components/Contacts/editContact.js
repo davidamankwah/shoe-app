@@ -40,8 +40,8 @@ export function EditContact() {
             email: email,
             message: message
         }
-        //Sends you to the book you want edited
-        //pass up edited books
+        //Sends you to the contact you want edited
+        //pass up edited conatct
         axios.put('http://localhost:4000/api/contact/' + id, newContact)
             .then()
             .catch();
@@ -50,7 +50,7 @@ export function EditContact() {
     return (
         <div>
             <h3>Edit Contact</h3>
-            {/* call handleSubmit event when clicking edit book */}
+            {/* call handleSubmit event when clicking edit contact */}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Edit Name: </label>
@@ -77,7 +77,7 @@ export function EditContact() {
                     />
                 </div>
                 
-                <input type="submit" value="Edit Contact"></input> {/* submit to edit book */}
+                <input type="submit" value="Edit Contact"></input> {/* submit to edit contact */}
             </form>
         </div>
     );

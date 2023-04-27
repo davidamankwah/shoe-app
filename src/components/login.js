@@ -56,6 +56,7 @@ function Login() {
     localStorage.removeItem("isLoggedIn");
   };
 
+  // Logout
   if (loggedIn) {
     return (
       <div>
@@ -63,7 +64,10 @@ function Login() {
         <button className="btn btn-primary" onClick={handleLogout}>Log out</button>
       </div>
     );
-  } else if (signup) {
+  } 
+  
+  // Register
+  else if (signup) {
     return (
       <div>
         <h2>Sign up</h2>
@@ -84,7 +88,8 @@ function Login() {
           <label>
             Email:
             <input
-               type="text"
+               type="email"
+               id="email"
                className="form-control"
                value={signupEmail}
               onChange={(event) => setSignupEmail(event.target.value)}
@@ -113,7 +118,9 @@ function Login() {
       </footer>
       </div>
     );
-  } else {
+  }
+  //log in 
+  else {
     return (
       <div>
         <h2>Login</h2>

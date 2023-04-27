@@ -14,7 +14,7 @@ export class ContactItem extends React.Component {
         this.DeleteContact = this.DeleteContact.bind(this);
     }
 
-    // delete book function
+    // delete contact function
     //invoked when delete button clicked
     DeleteContact(e) {
         e.preventDefault();

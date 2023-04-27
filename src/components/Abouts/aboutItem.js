@@ -1,8 +1,7 @@
 //imports
 import React from "react";
-import Card from 'react-bootstrap/Card';
 import { Button } from '@mui/material';
-import axios from "axios"; //import to use axios
+
 export class AboutItem extends React.Component {
 
 
@@ -13,7 +12,7 @@ export class AboutItem extends React.Component {
               <div class="row">
               <div class="column">
                 <div class="card">
-                
+                {/* outputs group member, job title and group details */}
                   <div class="container">
                     <h2>{this.props.about.member}</h2>
                     <p class="title">{this.props.about.title}</p>

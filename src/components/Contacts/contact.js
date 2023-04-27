@@ -1,5 +1,5 @@
 import React from "react";
-import { ContactItem } from "./contactItem"; //import bookitem
+import { ContactItem } from "./contactItem"; //import contactItem
 
 export class Contact extends React.Component{
     render(){
