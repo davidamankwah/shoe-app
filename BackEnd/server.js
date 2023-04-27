@@ -21,6 +21,12 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Serve the static files from the Shoe app
+//build project
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../build'))); //build location
+app.use('/static', express.static(path.join(__dirname, 'build//static')));
+
 const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 async function main() {
@@ -189,6 +195,12 @@ app.get('/api/boots', (req, res) => {
       console.log(error);
       res.status(500).send('An error occurred while fetching books');
     });
+});
+
+// Handles any requests that don't match the ones above
+//For all the routes not specified above, send back a file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../build/index.html'));
 });
 
 //connect to port 4000
